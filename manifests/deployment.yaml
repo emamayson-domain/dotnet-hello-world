@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dotnet-hello-world
+  name: Dotnet
   labels:
-    app: dotnet-hello-world
+    app: Dotnet
     kubernetes.azure.com/generator: devhub
-  namespace: dotnet
+  namespace: namespace-workflow-1723906223523
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dotnet-hello-world
+      app: Dotnet
   template:
     metadata:
       labels:
-        app: dotnet-hello-world
+        app: Dotnet
     spec:
       containers:
-        - name: dotnet-hello-world
-          image: acrworkflow1723904841628.azurecr.io/image-workflow-1723904841628:latest
+        - name: Dotnet
+          image: acrworkflow1723906223523.azurecr.io/image-workflow-1723906223523:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
