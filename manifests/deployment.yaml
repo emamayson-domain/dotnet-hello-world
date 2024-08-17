@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-api
+  labels:
+    app: hello-world-api
+    kubernetes.azure.com/generator: devhub
+  namespace: namespace-workflow-1723904213138
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-api
+  template:
+    metadata:
+      labels:
+        app: hello-world-api
+    spec:
+      containers:
+        - name: hello-world-api
+          image: acrworkflow1723904213138.azurecr.io/image-workflow-1723904213138:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000

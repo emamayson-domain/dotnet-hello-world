@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-api
+  namespace: namespace-workflow-1723904213138
+  labels:
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app: hello-world-api
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
